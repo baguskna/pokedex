@@ -1,0 +1,7 @@
+@use 'src/styles' as *;
+
+.home-headline {
+  @include bp(m) {
+    color: $pkdx-grey-900;
+  }
+}
