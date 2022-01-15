@@ -7,10 +7,18 @@
       <figcaption class="pkdx__caption copy-body--large">{{pokemonName}}</figcaption>
     </figure>
     <footer class="pkdx__article-footer">
-      <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()">x</button>
-      <button *ngIf="!isFav" class="pkdx__artcile-fav__button" aria-label="Fav" (click)="saveFav()">Fav</button>
-      <a routerLink="/pokemon/{{idPokemon}}">></a>
-      <div class="toast" *ngIf="isToastVisible">saved!</div>
+      <div class="pkdx__article-btn">
+        <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button *ngIf="!isFav" class="pkdx__artcile-fav__button icon" aria-label="Fav" (click)="saveFav()">
+          <mat-icon>bookmark_border</mat-icon>
+        </button>
+        <div class="toast" *ngIf="isToastVisible">saved!</div>
+      </div>
+      <a class="icon pkdx__article-chevron" routerLink="/pokemon/{{idPokemon}}">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </a>
     </footer>
   </div>
 </article>

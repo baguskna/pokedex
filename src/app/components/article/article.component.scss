@@ -40,9 +40,21 @@
   border-bottom-right-radius: 10px;
   display: flex;
   height: 42px;
+  justify-content: space-between;
   padding: 12px;
 }
 
 .toast {
   margin: 0 5px;
+  padding-top: 2px;
+}
+
+.pkdx__article-close__button,
+.pkdx__artcile-fav__button {
+  background-color: transparent;
+  border: none;
+}
+
+.pkdx__article-btn {
+  display: flex;
 }

@@ -5,6 +5,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { ArticleComponent } from './components/article/article.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,  
+    HomeComponent,
     FavoritesComponent,
     DetailComponent,
     ArticleComponent,
@@ -33,6 +34,7 @@ import { ArticleComponent } from './components/article/article.component';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

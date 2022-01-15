@@ -1,0 +1,22 @@
+@use 'src/styles' as *;
+
+.pkdx__header {
+  align-items: center;
+  background-color: $pkdx-grey-0;
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+  display: flex;
+  padding: 0 25px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.pkdx__header-logo {
+  padding: 10px 0;
+  width: 100px;
+}

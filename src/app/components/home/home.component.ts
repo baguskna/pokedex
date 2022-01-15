@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
   onFilter = false;
   private limit = 200;
   private offset = 0;
-  
+
   constructor(private apiService: ApiService) { }
-  
+
   ngOnInit(): void {
     this.getPokemon();
   }

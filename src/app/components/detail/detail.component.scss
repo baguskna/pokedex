@@ -1,8 +1,11 @@
 @use 'src/styles' as *;
 
+.pkdx-detail__wrapper {
+  margin: 100px 0;
+}
+
 .pkdx-detail {
   display: flex;
-  margin: 70px 0;
   flex-direction: column;
 
   @include bp(m) {

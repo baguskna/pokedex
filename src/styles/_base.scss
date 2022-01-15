@@ -16,7 +16,8 @@ p {
 }
 
 button,
-a {
+a,
+.icon {
   cursor: pointer;
 }
 
@@ -65,5 +66,15 @@ a {
 
   @include bp (l) {
     padding: 0 174px;
+  }
+}
+
+.pkdx__back-btn {
+  margin-bottom: 40px;
+
+  a {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
   }
 }
