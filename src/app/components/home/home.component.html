@@ -1,0 +1,23 @@
+<div class="pkdx-page">
+  <div class="pkdx"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="1000"
+      (scrolled)="onScroll()">
+    <div class="pkdx__filter">
+      <h1 class="copy-headline--1 pkdx__filter-title">Type filter: {{filter | titlecase}}</h1>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Filter</mat-label>
+          <mat-select (selectionChange)="change($event)" class="pkdx__option">
+            <mat-option class="pkdx__option">All</mat-option>
+            <mat-option class="pkdx__option" *ngFor="let filter of dataFilter" [value]="filter.value">{{filter.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="pkdx__item-wrapper">
+      <app-article *ngFor="let pokemon of data | async" [pokemonName]="pokemon.name" [pokemonUrl]="pokemon.url"></app-article>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+@use 'src/styles' as *;
+
+.pkdx {
+  margin: 70px 0;
+}
+
+.pkdx__item-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pkdx__option {
+  text-transform: capitalize;
+}
+
+.pkdx__filter {
+  align-items: center;
+  display: flex;
+  margin: 0 5px;
+  justify-content: space-between;
+}
+
+.pkdx__filter-title {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,24 @@
+<article class="pkdx__item">
+  <div class="pkdx__article">
+    <figure class="pkdx__figure">
+      <img class="pkdx__image" [src]="imagePokemon"
+          [alt]="pokemonName" loading="lazy"
+          onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'">
+      <figcaption class="pkdx__caption copy-body--large">{{pokemonName}}</figcaption>
+    </figure>
+    <footer class="pkdx__article-footer">
+      <div class="pkdx__article-btn">
+        <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()" aria-label="Close">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button *ngIf="!isFav" class="pkdx__artcile-fav__button icon" aria-label="Fav" (click)="saveFav()" aria-label="Favorite">
+          <mat-icon>bookmark_border</mat-icon>
+        </button>
+        <div class="toast" *ngIf="isToastVisible">saved!</div>
+      </div>
+      <a class="icon pkdx__article-chevron" routerLink="/pokemon/{{idPokemon}}" aria-label="Forward">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </a>
+    </footer>
+  </div>
+</article>

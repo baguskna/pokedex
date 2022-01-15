@@ -1,0 +1,52 @@
+@use 'src/styles' as *;
+
+.pkdx-detail__wrapper {
+  margin: 100px 0;
+}
+
+.pkdx-detail {
+  display: flex;
+  flex-direction: column;
+
+  @include bp(m) {
+    flex-direction: row;
+  }
+
+  p + p {
+    margin-top: 16px;
+  }
+}
+
+.pkdx-detail__figure {
+  border: 1px solid $pkdx-grey-400;
+  border-radius: 10px;
+  flex-shrink: 0;
+  position: relative;
+  padding-bottom: 100%;
+  width: 100%;
+
+  @include bp(m) {
+    padding-bottom: 400px;
+    width: 400px;
+  }
+}
+
+.pkdx-detail__image {
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.pkdx-detail__content {
+  @include bp(m) {
+    padding-left: 20px;
+  }
+}
+
+.pkdx-detail__name {
+  color: $pkdx-grey-900;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+}

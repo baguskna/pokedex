@@ -1,0 +1,20 @@
+<div class="pkdx-page">
+  <div class="pkdx__fav">
+    <div class="pkdx__back-btn">
+      <a routerLink="/" class="icon">
+        <mat-icon>arrow_back_ios</mat-icon>
+        back
+      </a>
+    </div>
+    <h1 class="copy-headline--1" *ngIf="!empty">Your favorites Pokemons: </h1>
+    <div class="pkdx__item-wrapper">
+      <app-article *ngFor="let pokemon of data | async; index as i"
+          [pokemonName]="pokemon.name"
+          [pokemonUrl]="pokemon.url"
+          [index]="i"
+          [isFav]="true"
+          (deleteFavorite)="deleteFav($event)"></app-article>
+        <h1 class="copy-headline--1" *ngIf="empty">You haven't added your favorites Pokemon yet!</h1>
+    </div>
+  </div>
+</div>
