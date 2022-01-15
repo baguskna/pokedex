@@ -1,6 +1,8 @@
+// Mixins import.
+@import 'src/styles/mixins.scss';
 // Base style import.
 @import 'src/styles/base.scss';
 // Colors style import.
 @import 'src/styles/colors.scss';
-// Mixins import.
-@import 'src/styles/mixins.scss';
+// Material theme import.
+@import 'src/styles/material-theme.scss';

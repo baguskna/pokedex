@@ -14,7 +14,11 @@ export class ApiService {
     return this.http.get(`${this.URI_API}pokemon?offset=${offset}&limit=${limit}`);
   }
 
-  getPokemonForm(): Observable<any> {
-    return this.http.get(``)
+  getPokemonDetail(id: number): Observable<any> {
+    return this.http.get(`${this.URI_API}pokemon/${id}`);
+  }
+
+  getPokemonByFilter(value: string): Observable<any> {
+    return this.http.get(`${this.URI_API}type/${value}`);
   }
 }

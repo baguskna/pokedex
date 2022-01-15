@@ -57,3 +57,13 @@ a {
   line-height: 18px;
   letter-spacing: 0;
 }
+
+.pkdx-page {
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 1440px;
+
+  @include bp (l) {
+    padding: 0 174px;
+  }
+}

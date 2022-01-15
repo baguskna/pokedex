@@ -1,11 +1,14 @@
 @use 'src/styles' as *;
 
 .pkdx {
+  margin: 70px 0;
+}
+
+.pkdx__item-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 70px 0;
 }
 
 .pkdx__item {
@@ -38,6 +41,16 @@
   }
 }
 
+.pkdx__option,
 .pkdx__caption {
   text-transform: capitalize;
+}
+
+.pkdx__filter {
+  display: flex;
+  margin: 0 5px;
+  
+  form {
+    margin-left: auto;
+  }
 }
