@@ -1,13 +1,15 @@
 <a class="pkdx__item">
   <article class="pkdx__article">
     <figure class="pkdx__figure">
-      <img class="pkdx__image" [src]="imagePokemon" 
-          [alt]="pokemonName" loading="lazy" 
+      <img class="pkdx__image" [src]="imagePokemon"
+          [alt]="pokemonName" loading="lazy"
           onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'">
       <figcaption class="pkdx__caption copy-body--large">{{pokemonName}}</figcaption>
     </figure>
     <footer class="pkdx__article-footer">
-      <button class="pkdx__artcile-fav__button" aria-label="Fav" (click)="saveFav()">Fav</button>
+      <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()">x</button>
+      <button *ngIf="!isFav" class="pkdx__artcile-fav__button" aria-label="Fav" (click)="saveFav()">Fav</button>
+      <div class="toast" *ngIf="isToastVisible">saved!</div>
     </footer>
   </article>
 </a>

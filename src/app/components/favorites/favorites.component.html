@@ -1,7 +1,12 @@
 <div class="pkdx-page">
   <div class="pkdx__fav">
     <div class="pkdx__item-wrapper">
-      <app-article></app-article>
+      <app-article *ngFor="let pokemon of data | async; index as i"
+          [pokemonName]="pokemon.name"
+          [pokemonUrl]="pokemon.url"
+          [index]="i"
+          [isFav]="true"
+          (deleteFavorite)="deleteFav($event)"></app-article>
     </div>
   </div>
 </div>

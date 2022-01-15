@@ -9,6 +9,8 @@ export class AppComponent implements OnInit {
   title = 'pokedex';
 
   ngOnInit(): void {
-    localStorage.setItem('favItems', JSON.stringify([]));
+    if (!localStorage.getItem('favItems')) {
+      localStorage.setItem('favItems', JSON.stringify([]));
+    }
   }
 }

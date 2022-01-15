@@ -1,5 +1,4 @@
-import { newArray } from '@angular/compiler/src/util';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { PokemonSchema } from 'src/shared/interfaces';
 
@@ -9,10 +8,14 @@ import { PokemonSchema } from 'src/shared/interfaces';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
+  @Input() index: number = 0;
+  @Input() isFav: boolean = false;
   @Input() pokemonName: string = '';
   @Input() pokemonUrl: string = '';
+  @Output() deleteFavorite = new EventEmitter<number>();
   imagePokemon: string = '';
-  
+  isToastVisible: boolean = false;
+
   get idPokemon(): string {
     const index = this.pokemonUrl.split('/');
     return index[6];
@@ -28,14 +31,32 @@ export class ArticleComponent implements OnInit {
 
 
   saveFav(): void {
-    const favItems = localStorage.getItem('favItems') ?? '';
-    console.log(JSON.parse(favItems))
-    const arrFav = [];
-    const newPokemonn: PokemonSchema = {
+    const favItems = JSON.parse(localStorage.getItem('favItems') ?? '');
+    const arrFav: PokemonSchema[] = [...favItems];
+    const newPokemon: PokemonSchema = {
       name: this.pokemonName,
       url: this.pokemonUrl,
     }
-    arrFav.push(newPokemonn);
+
+    this.showToast();
+
+    for (const fav of arrFav) {
+      if (fav.name === newPokemon.name) return;
+    }
+
+    arrFav.push(newPokemon);
     localStorage.setItem('favItems', JSON.stringify(arrFav));
+  }
+
+  showToast(): void {
+    this.isToastVisible = true;
+
+    setTimeout(() => {
+      this.isToastVisible = false;
+    }, 1000);
+  }
+
+  deleteFav(): void {
+    this.deleteFavorite.emit(this.index);
   }
 }
