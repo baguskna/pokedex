@@ -1,0 +1,21 @@
+@use 'src/styles' as *;
+
+.pkdx-detail {
+  display: flex;
+  margin: 70px 0;
+}
+
+.pkdx-detail__figure {
+  border: 1px solid $pkdx-grey-400;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.pkdx-detail__image {
+  height: 300px;
+  width: 300px;
+}
+
+.pkdx-detail__content {
+  padding-left: 20px;
+}

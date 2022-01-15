@@ -5,6 +5,7 @@
   border-radius: 5px;
   display: flex;
   margin: 0 5px 10px;
+  text-decoration: none;
   width: 120px;
 
   &:hover {
@@ -32,6 +33,7 @@
 }
 
 .pkdx__caption {
+  color: $pkdx-grey-900;
   text-transform: capitalize;
 }
 
