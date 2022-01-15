@@ -1,7 +1,43 @@
 @use 'src/styles' as *;
 
-.home-headline {
-  @include bp(m) {
-    color: $pkdx-grey-900;
+.pkdx {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 70px 0;
+}
+
+.pkdx__item {
+  border: 1px solid $pkdx-grey-500;
+  border-radius: 5px;
+  margin: 0 5px 10px;
+  width: 120px;
+
+  &:hover {
+    box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
   }
+
+  @include bp(m) {
+    margin: 0 10px 20px;
+    width: 160px;
+  }
+}
+
+.pkdx__figure {
+  padding: 10px 10px 20px;
+  text-align: center;
+}
+
+.pkdx__image {
+  height: 100px;
+  width: 100%;  
+
+  @include bp(m) {
+    height: 160px;
+  }
+}
+
+.pkdx__caption {
+  text-transform: capitalize;
 }
