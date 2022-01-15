@@ -5,7 +5,8 @@
   background-color: $pkdx-grey-0;
   box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
   display: flex;
-  padding: 0 25px;
+  height: 60px;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
@@ -17,6 +18,21 @@
 }
 
 .pkdx__header-logo {
-  padding: 10px 0;
   width: 100px;
+}
+
+.pkdx__nav-logo {
+  padding-left: 15px;
+
+  @include bp(m) {
+    padding-left: 40px;
+  }
+}
+
+.pkdx__nav-fav {
+  padding-right: 15px;
+
+  @include bp(m) {
+    padding-right: 40px;
+  }
 }

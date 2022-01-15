@@ -8,15 +8,15 @@
     </figure>
     <footer class="pkdx__article-footer">
       <div class="pkdx__article-btn">
-        <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()">
+        <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()" aria-label="Close">
           <mat-icon>close</mat-icon>
         </button>
-        <button *ngIf="!isFav" class="pkdx__artcile-fav__button icon" aria-label="Fav" (click)="saveFav()">
+        <button *ngIf="!isFav" class="pkdx__artcile-fav__button icon" aria-label="Fav" (click)="saveFav()" aria-label="Favorite">
           <mat-icon>bookmark_border</mat-icon>
         </button>
         <div class="toast" *ngIf="isToastVisible">saved!</div>
       </div>
-      <a class="icon pkdx__article-chevron" routerLink="/pokemon/{{idPokemon}}">
+      <a class="icon pkdx__article-chevron" routerLink="/pokemon/{{idPokemon}}" aria-label="Forward">
         <mat-icon>arrow_forward_ios</mat-icon>
       </a>
     </footer>
