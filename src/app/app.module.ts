@@ -15,6 +15,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleComponent } from './components/article/article.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,12 @@ import { ArticleComponent } from './components/article/article.component';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
