@@ -4,7 +4,22 @@
       <img class="pkdx-detail__image" [src]="picture" [alt]="name">
     </figure>
     <div class="pkdx-detail__content">
-      <h1 class="copy-headline--1">{{name}}</h1>
+      <h1 class="copy-headline--1 pkdx-detail__name">{{name}}</h1>
+      <p>Ability: 
+        <span *ngFor="let ability of abilities; index as i">
+          {{ability.ability.name}}<span *ngIf="i !== abilities.length - 1">,</span>
+        </span>
+      </p>
+      <p>Moves:
+        [<span *ngFor="let move of moves; index as i">
+          {{move.move.name}}<span *ngIf="i !== moves.length - 1">,</span>
+        </span>]
+      </p>
+      <p>Types:
+        <span *ngFor="let type of types; index as i">
+          {{type.type.name}}<span *ngIf="i !== types.length - 1">,</span>
+        </span>
+      </p>
     </div>
   </div>
 </div>

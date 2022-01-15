@@ -16,10 +16,12 @@
 }
 
 .pkdx__filter {
+  align-items: center;
   display: flex;
   margin: 0 5px;
-  
-  form {
-    margin-left: auto;
-  }
+  justify-content: space-between;
+}
+
+.pkdx__filter-title {
+  padding-bottom: 20px;
 }

@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -20,8 +19,7 @@ import { ArticleComponent } from './components/article/article.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    HomeComponent,
+    HomeComponent,  
     FavoritesComponent,
     DetailComponent,
     ArticleComponent,

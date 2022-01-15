@@ -39,7 +39,7 @@ export class ArticleComponent implements OnInit {
     }
 
     this.showToast();
-
+    // Avoid duplicate fav item.
     for (const fav of arrFav) {
       if (fav.name === newPokemon.name) return;
     }

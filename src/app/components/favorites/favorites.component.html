@@ -1,5 +1,6 @@
 <div class="pkdx-page">
   <div class="pkdx__fav">
+    <h1 class="copy-headline--1" *ngIf="!empty">Your favorites Pokemons: </h1>
     <div class="pkdx__item-wrapper">
       <app-article *ngFor="let pokemon of data | async; index as i"
           [pokemonName]="pokemon.name"
@@ -7,6 +8,7 @@
           [index]="i"
           [isFav]="true"
           (deleteFavorite)="deleteFav($event)"></app-article>
+        <h1 class="copy-headline--1" *ngIf="empty">You haven't added your favorites Pokemon yet!</h1>
     </div>
   </div>
 </div>

@@ -13,9 +13,10 @@ import { PokemonSchema } from 'src/shared/interfaces';
 export class HomeComponent implements OnInit {
   data = new BehaviorSubject<PokemonSchema[]>([]);
   dataFilter = FILTER_DATA;
+  filter: string = 'All';
   onFilter = false;
+  private limit = 200;
   private offset = 0;
-  private limit = 300;
   
   constructor(private apiService: ApiService) { }
   
@@ -25,8 +26,8 @@ export class HomeComponent implements OnInit {
 
   onScroll(): void {
     if (this.onFilter) return;
-    this.offset += 300;
-    this.limit += 300;
+    this.offset += 200;
+    this.limit += 200;
     this.getPokemon();
   }
 
@@ -41,13 +42,15 @@ export class HomeComponent implements OnInit {
   }
 
   change(event: MatSelectChange): void {
-    if (!event.value) { // stop function if user chooses clear.
+    if (!event.value) { // stop function if user chooses all.
       this.offset = 0;
       this.limit = 300;
       this.getPokemon();
+      this.filter = 'All';
       return;
     }
     this.onFilter = true;
+    this.filter = event.value;
     this.apiService.getPokemonByFilter(event.value)
       .pipe(map(pokemon => {
         return pokemon.pokemon.map((nested: any) => {

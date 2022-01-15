@@ -1,5 +1,5 @@
-<a class="pkdx__item" routerLink="/pokemon/{{idPokemon}}">
-  <article class="pkdx__article">
+<article class="pkdx__item">
+  <div class="pkdx__article">
     <figure class="pkdx__figure">
       <img class="pkdx__image" [src]="imagePokemon"
           [alt]="pokemonName" loading="lazy"
@@ -9,7 +9,8 @@
     <footer class="pkdx__article-footer">
       <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()">x</button>
       <button *ngIf="!isFav" class="pkdx__artcile-fav__button" aria-label="Fav" (click)="saveFav()">Fav</button>
+      <a routerLink="/pokemon/{{idPokemon}}">></a>
       <div class="toast" *ngIf="isToastVisible">saved!</div>
     </footer>
-  </article>
-</a>
+  </div>
+</article>

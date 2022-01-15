@@ -5,6 +5,7 @@
       [infiniteScrollThrottle]="1000"
       (scrolled)="onScroll()">
     <div class="pkdx__filter">
+      <h1 class="copy-headline--1 pkdx__filter-title">Type filter: {{filter | titlecase}}</h1>
       <form>
         <mat-form-field appearance="fill">
           <mat-label>Filter</mat-label>
