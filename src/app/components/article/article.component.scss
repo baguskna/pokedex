@@ -1,0 +1,46 @@
+@use 'src/styles' as *;
+
+.pkdx__item {
+  border: 1px solid $pkdx-grey-500;
+  border-radius: 5px;
+  display: flex;
+  margin: 0 5px 10px;
+  width: 120px;
+
+  &:hover {
+    box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
+  }
+
+  @include bp(m) {
+    margin: 0 10px 20px;
+    width: 160px;
+  }
+}
+
+.pkdx__figure {
+  padding: 10px 10px 20px;
+  text-align: center;
+}
+
+.pkdx__image {
+  height: 100px;
+  width: 100%;  
+
+  @include bp(m) {
+    height: 160px;
+  }
+}
+
+.pkdx__caption {
+  text-transform: capitalize;
+}
+
+.pkdx__article-footer {
+  align-items: center;
+  background: linear-gradient(rgba(229, 232, 235, 0.392) 0%, rgb(255, 255, 255) 20%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  height: 42px;
+  padding: 12px;
+}

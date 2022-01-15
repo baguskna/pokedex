@@ -1,0 +1,12 @@
+@use 'src/styles' as *;
+
+.pkdx__fav {
+  margin: 70px 0;
+}
+
+.pkdx__item-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

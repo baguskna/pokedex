@@ -16,16 +16,7 @@
       </form>
     </div>
     <div class="pkdx__item-wrapper">
-      <a *ngFor="let pokemon of data | async" class="pkdx__item">
-        <article class="pkdx__article">
-          <figure class="pkdx__figure">
-            <img class="pkdx__image" [src]="getImagePokemon(pokemon.url)" 
-                [alt]="pokemon.name" loading="lazy" 
-                onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'">
-            <figcaption class="pkdx__caption copy-body--large">{{pokemon.name}}</figcaption>
-          </figure>
-        </article>
-      </a>
+      <app-article *ngFor="let pokemon of data | async" [pokemonName]="pokemon.name" [pokemonUrl]="pokemon.url"></app-article>
     </div>
   </div>
 </div>

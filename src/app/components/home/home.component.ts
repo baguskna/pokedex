@@ -22,11 +22,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemon();
   }
-  
-  getImagePokemon(url: string): string {
-    const index = url.split('/');
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index[6]}.png`;
-  }
 
   onScroll(): void {
     if (this.onFilter) return;
@@ -37,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   getPokemon(): void {
     this.apiService.getPokemon(this.offset, this.limit).subscribe((data) => {
-      const newPokemon = data.results;
+      const newPokemon: PokemonSchema[] = data.results;
       // Clear the data if on filter state.
       const currentPokemon = this.onFilter ? [] : this.data.getValue();
       this.data.next(currentPokemon.concat(newPokemon));
@@ -57,9 +52,9 @@ export class HomeComponent implements OnInit {
       .pipe(map(pokemon => {
         return pokemon.pokemon.map((nested: any) => {
           return nested.pokemon;
-        })
+        });
       }))
-      .subscribe((data) => {
+      .subscribe((data: PokemonSchema[]) => {
         this.data.next(data);
       });
   }

@@ -21,4 +21,8 @@ export class ApiService {
   getPokemonByFilter(value: string): Observable<any> {
     return this.http.get(`${this.URI_API}type/${value}`);
   }
+
+  getPokemonImage(id: string): Observable<any> {
+    return this.http.get(`${this.URI_API}pokemon-form/${id}`);
+  }
 }

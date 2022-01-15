@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     FavoritesComponent,
     DetailComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
