@@ -5,6 +5,8 @@ import { ApiService } from 'src/app/services/api.service';
 import { FILTER_DATA } from 'src/shared/constant';
 import { PokemonSchema } from 'src/shared/interfaces';
 
+const NUMBER_POKEMON = 24;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,8 +16,9 @@ export class HomeComponent implements OnInit {
   data = new BehaviorSubject<PokemonSchema[]>([]);
   dataFilter = FILTER_DATA;
   filter: string = 'All';
+  isLoading: boolean = false;
   onFilter = false;
-  private limit = 200;
+  private limit = NUMBER_POKEMON;
   private offset = 0;
 
   constructor(private apiService: ApiService) { }
@@ -26,18 +29,20 @@ export class HomeComponent implements OnInit {
 
   onScroll(): void {
     if (this.onFilter) return;
-    this.offset += 200;
-    this.limit += 200;
+    this.offset += NUMBER_POKEMON;
+    this.limit += NUMBER_POKEMON;
     this.getPokemon();
   }
 
   getPokemon(): void {
+    this.isLoading = true;
     this.apiService.getPokemon(this.offset, this.limit).subscribe((data) => {
       const newPokemon: PokemonSchema[] = data.results;
       // Clear the data if on filter state.
       const currentPokemon = this.onFilter ? [] : this.data.getValue();
       this.data.next(currentPokemon.concat(newPokemon));
       this.onFilter = false;
+      this.isLoading = false;
     });
   }
 
