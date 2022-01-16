@@ -4,8 +4,8 @@
       <img class="pkdx__image" [src]="imagePokemon"
           [alt]="pokemonName" loading="lazy"
           onerror="this.src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'">
-      <figcaption class="pkdx__caption copy-body--large">{{pokemonName}}</figcaption>
-    </figure>
+      </figure>
+      <p class="pkdx__caption copy-body--large">{{pokemonName}}</p>
     <footer class="pkdx__article-footer">
       <div class="pkdx__article-btn">
         <button *ngIf="isFav" class="pkdx__article-close__button" aria-label="Del" (click)="deleteFav()" aria-label="Close">

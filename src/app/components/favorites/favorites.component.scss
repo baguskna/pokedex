@@ -10,3 +10,11 @@
   flex-wrap: wrap;
   margin-top: 24px;
 }
+
+app-article {
+  width: 50%;
+
+  @include bp(m) {
+    width: unset;
+  }
+}
