@@ -20,6 +20,12 @@ There are three routes in this project:
 * `/pokemon/:id` contains all detail info of each pokemon.
 * `/favorites` contains all favorites pokemons.
 
+## Technologies
+* [Infinite Scrolling](https://www.npmjs.com/package/ngx-infinite-scroll) for infinite scrolling.
+* [Capacitor](https://capacitorjs.com/solution/angular) to convert Angular to mobile app.
+* [PWA](https://angular.io/guide/service-worker-getting-started) to service workers.
+* [Angular Material](https://material.angular.io/guide/getting-started)  
+
 ## Navigation
 
 To go to favorites page:
