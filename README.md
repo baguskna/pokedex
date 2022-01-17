@@ -23,15 +23,19 @@ There are three routes in this project:
 ## Navigation
 
 To go to favorites page:
+
 ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/navigate_to_fav.png)
 
 To go to detail pokemon page:
+
 ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/navigate_to_detail.png)
 
 To add pokemon to favorites:
+
 ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/add_to_fav.png)
 
 To remove pokemon from favorites:
+
 ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/remove_to_fav.png)
 
 ## PWA and Native iOS and Android App
@@ -55,7 +59,7 @@ To run native mobile app, I use [Capacitor Angular](https://capacitorjs.com/solu
 
 1. run `npx cap add ios` to add ios folder in project.
 2. Then run `npx cap open ios`.
-3. Next run `npx cap run ios` or on Xcode follow this command ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/ios_command.png).
+3. Next run `npx cap run ios` or on Xcode follow this command ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/ios_command.png)
 
 ** NOTES THAT THE APP IS LOADING VERY SLOW. THE WILLINGNESS TO BE PATIENT IS REQUIRED.
 
@@ -63,7 +67,7 @@ To run native mobile app, I use [Capacitor Angular](https://capacitorjs.com/solu
 
 1. run `npx cap add android` to add ios folder in project.
 2. Then run `npx cap open android`.
-3. Next run `npx cap run android` or on Android Studio follow this command ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/running_android.png).
+3. Next run `npx cap run android` or on Android Studio follow this command ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/running_android.png)
 
 ** NOTES THAT THE APP IS LOADING VERY SLOW. THE WILLINGNESS TO BE PATIENT IS REQUIRED.
 
