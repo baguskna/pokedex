@@ -4,24 +4,77 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+After clone the repo please run `npm install` to install all dependencies.
 
-## Code scaffolding
+Then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project Structure
 
-## Build
+This Angular app is strutured in:
+* `src/app/components` has all the component used in this project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Routes
 
-## Running unit tests
+There are three routes in this project:
+* `/` home component displays all pokemon.
+* `/pokemon/:id` contains all detail info of each pokemon.
+* `/favorites` contains all favorites pokemons.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technologies
+* [Infinite Scrolling](https://www.npmjs.com/package/ngx-infinite-scroll) for infinite scrolling.
+* [Capacitor](https://capacitorjs.com/solution/angular) to convert Angular to mobile app.
+* [PWA](https://angular.io/guide/service-worker-getting-started) to service workers.
+* [Angular Material](https://material.angular.io/guide/getting-started)  
 
-## Running end-to-end tests
+## Navigation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To go to favorites page:
 
-## Further help
+![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/navigate_to_fav.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To go to detail pokemon page:
+
+![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/navigate_to_detail.png)
+
+To add pokemon to favorites:
+
+![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/add_to_fav.png)
+
+To remove pokemon from favorites:
+
+![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/remove_to_fav.png)
+
+## PWA and Native iOS and Android App
+
+Before generating PWA and Native mobile app first thing to do is to generate production build app, by running:
+
+`ng build`
+
+## PWA
+
+1. To run PWA locally we need to install `http-server`, in order to do that run `npm install -g http-server`.
+2. Then go to dist folder by typing `cd/pokedex`.
+3. Next run `http-server -p 8081`.
+4. The app will run on port `8081`.
+
+## Native iOS and Android App
+
+To run native mobile app, I use [Capacitor Angular](https://capacitorjs.com/solution/angular)
+
+### iOS
+
+1. run `npx cap add ios` to add ios folder in project.
+2. Then run `npx cap open ios`.
+3. Next run `npx cap run ios` or on Xcode follow this command ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/ios_command.png)
+
+** NOTES THAT THE APP IS LOADING VERY SLOW. THE WILLINGNESS TO BE PATIENT IS REQUIRED.
+
+### Android
+
+1. run `npx cap add android` to add ios folder in project.
+2. Then run `npx cap open android`.
+3. Next run `npx cap run android` or on Android Studio follow this command ![alt text](https://github.com/baguskna/pokedex/blob/develop/src/assets/images/running_android.png)
+
+** NOTES THAT THE APP IS LOADING VERY SLOW. THE WILLINGNESS TO BE PATIENT IS REQUIRED.
+
+

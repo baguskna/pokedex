@@ -1,9 +1,5 @@
 <div class="pkdx-page">
-  <div class="pkdx"
-      infiniteScroll
-      [infiniteScrollDistance]="2"
-      [infiniteScrollThrottle]="1000"
-      (scrolled)="onScroll()">
+  <div class="pkdx">
     <div class="pkdx__filter">
       <h1 class="copy-headline--1 pkdx__filter-title">Type filter: {{filter | titlecase}}</h1>
       <form>
@@ -19,5 +15,10 @@
     <div class="pkdx__item-wrapper">
       <app-article *ngFor="let pokemon of data | async" [pokemonName]="pokemon.name" [pokemonUrl]="pokemon.url"></app-article>
     </div>
+    <div infiniteScroll
+        [infiniteScrollDistance]="4"
+        [infiniteScrollThrottle]="50"
+        (scrolled)="onScroll()"></div>
+    <app-spinner *ngIf="isLoading"></app-spinner>
   </div>
 </div>

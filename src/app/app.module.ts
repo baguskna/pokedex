@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleComponent } from './components/article/article.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { environment } from '../environments/environment';
     FavoritesComponent,
     DetailComponent,
     ArticleComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

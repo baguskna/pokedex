@@ -6,7 +6,6 @@
   display: flex;
   margin: 0 5px 10px;
   text-decoration: none;
-  width: 120px;
 
   @include bp(m) {
     margin: 0 10px 20px;
@@ -14,22 +13,28 @@
   }
 }
 
+.pkdx__article {
+  width: 100%;
+}
+
 .pkdx__figure {
-  padding: 10px 10px 20px;
-  text-align: center;
+  position: relative;
+  padding-bottom: 100%;
 }
 
 .pkdx__image {
-  height: 100px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
-
-  @include bp(m) {
-    height: 160px;
-  }
 }
 
 .pkdx__caption {
   color: $pkdx-grey-900;
+  padding: 5px 0 15px;
+  text-align: center;
   text-transform: capitalize;
 }
 
